@@ -13,19 +13,19 @@ add.addEventListener("click", function () {
       : JSON.parse(localStorage.getItem("todos"));
 
     var currentTodo = {};
-    if (todos.length === 0) {
-      currentTodo = {
-        id: 0,
-        item,
-        isCompleted: false,
-      };
-    } else {
-      currentTodo = {
-        id: todos.length,
-        item,
-        isCompleted: false,
-      };
-    }
+    // if (todos.length === 0) {
+    //   currentTodo = {
+    //     id: 0,
+    //     item,
+    //     isCompleted: false,
+    //   };
+    // } else {
+    currentTodo = {
+      id: "id-" + new Date().getTime(), // unqiue id
+      item,
+      isCompleted: false,
+    };
+    // }
 
     getToDo([currentTodo]);
     todos.push(currentTodo);
@@ -41,13 +41,15 @@ txtInput.addEventListener("keydown", function (e) {
 });
 
 //checkbox
-function stateTodo(index, completed) {
-  console.log("index: ", index);
+function stateTodo(id, completed) {
+  console.log("id: ", id);
   const todos = JSON.parse(localStorage.getItem("todos"));
+
+  var index = todos.findIndex(std => std.id === id); // findIndex() is a function o find the Index from json object
+
   todos[index].isCompleted = completed;
   localStorage.setItem("todos", JSON.stringify(todos));
 }
-
 
 //Show Todos
 function getToDo(todos = JSON.parse(localStorage.getItem("todos"))) {
@@ -83,9 +85,9 @@ function getToDo(todos = JSON.parse(localStorage.getItem("todos"))) {
       const selectedCard = this.parentElement.parentElement;
       const checked = this.checked;
       console.log("card: ", selectedCard);
-      const index = selectedCard.getAttribute("id");
+      const id = selectedCard.getAttribute("id");
 
-      stateTodo(index, checked);
+      stateTodo(id, checked);
 
       checked
         ? selectedCard.classList.add("checked")
