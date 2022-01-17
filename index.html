@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-do App</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header>
+      <h1 style="text-align: center">
+        <a href="index.html"> Umang's To-Do List </a>
+      </h1>
+    </header>
 
-<body>
-  <header>
-    <h1 style="text-align: center">
-      <a href="index.html"> Umang's To-Do List </a>
-    </h1>
-  </header>
+    <div style="padding-left: 10%">
+      <label>Add To-do tasks:</label><br />
+      <input
+        type="text"
+        id="item"
+        class="txt-input"
+        name="to-do"
+        placeholder="Add your To-do item"
+      />
+      <button id="add-btn">Add</button><br />
 
-  <div style="padding-left: 10%">
-    <label>Add To-do tasks:</label><br />
-    <input type="text" id="item" class="txt-input" name="to-do" placeholder="Add your To-do item" />
-    <button id="add-btn">Add</button><br />
+      <div class="todos">
+        <h3><i>My Tasks...</i></h3>
 
-    <div class="todos">
-      <h3><i>My Tasks...</i></h3>
-      <table>
-        <ul class="not-comp"> </ul>
-      </table>
+        <ul class="not-comp"></ul>
 
-      <h3><i>Completed tasks...</i></h3>
+        <h3><i>Completed tasks...</i></h3>
 
-      <ul class="comp"></ul>
-
-    </div>
-  </div>
-  
-  <footer>
-    <div style="float: left; padding-left: 5%">
-      <h5><a href="about.html">About</a></h5>
+        <ul class="comp"></ul>
+      </div>
     </div>
 
-    <div style="float: right; padding-right: 5%">
-      <h5>Copyright</h5>
-    </div>
-  </footer>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+    <footer>
+      <div style="float: left; padding-left: 5%">
+        <h5><a href="about.html">About</a></h5>
+      </div>
 
+      <div style="float: right; padding-right: 5%">
+        <h5>Copyright</h5>
+      </div>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
